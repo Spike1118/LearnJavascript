@@ -10,12 +10,12 @@
 <body>
     <input type="text" id="username">
     <input type="checkbox" id="remember" name="">记住用户名
-    //案例分析
-    //(1)把数据存储起来，且关闭页面后还可看到，用localStorage
-    //(2)打开页面，先判断是否有用户名这个数据，如果有，就赋值给表单，并勾选复选框
-    //(3)当复选框发生改变，绑定change事件
-    //(4)如果复选框勾选，则存储用户名，否则清除用户名
     <script>
+        //案例分析
+        //(1)把数据存储起来，且关闭页面后还可看到，用localStorage
+        //(2)打开页面，先判断是否有用户名这个数据，如果有，就赋值给表单，并勾选复选框
+        //(3)当复选框发生改变，绑定change事件
+        //(4)如果复选框勾选，则存储用户名，否则清除用户名 -->
         var username = document.querySelector('#username');
         var remember = document.querySelector('#remember');
         if (localStorage.getItem('username')) {
