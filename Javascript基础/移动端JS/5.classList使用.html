@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one two"></div>
+    <button>开关灯</button>
+    <script>
+        //classList 返回元素的类名
+        //classList属性是HTML5新增的一个属性，返回元素的类名。但是ie10以上版本支持。 
+        //该属性用于在元素中添加，移除及切换 CSS 类。有以下方法
+        var div = document.querySelector('div');
+        // console.log(div.classList[1]);
+        //1.添加类名    是在后面追加类名 不会覆盖以前的类名，注意前面不要加.号
+        div.classList.add('three');
+        //2.删除类名
+        div.classList.remove('two');
+        //3.切换类
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            document.body.classList.toggle('bg');
+        })
+    </script>
+</body>
+
+</html>

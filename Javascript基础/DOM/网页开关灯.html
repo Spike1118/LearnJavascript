@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>开关灯</button>
+    <script>
+        // var body1 = document.body;
+        var htmlEle = document.documentElement;
+        var button = document.querySelector('button');
+        var flag = 0;   //设置一个全局变量flag,判断flag的值，若为0，则black,若为1，则white
+        button.onclick = function () {
+            if (flag == 0) {
+                // body1.style.backgroundColor = 'black';
+                htmlEle.style.backgroundColor = 'black';
+                flag = 1;
+            } else {
+                // body1.style.backgroundColor = 'white';
+                htmlEle.style.backgroundColor = 'white';
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

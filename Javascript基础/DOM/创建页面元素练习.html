@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <h1 align="center" title="一号标题">一号标题</h1> -->
+    <script>
+        //1.创建元素
+        var h1 = document.createElement('h1');
+        //将h1追加到body上
+        document.body.appendChild(h1);
+        //2.创建文本节点
+        var text = document.createTextNode('一号标题');
+        //将text追加到h1;
+        h1.appendChild(text);
+        //创建align属性
+        var alignAttr = document.createAttribute('align');
+        //给align属性赋值
+        alignAttr.value = 'center';
+        //设置属性节点
+        h1.setAttributeNode(alignAttr);
+        //创建title属性
+        var titleAttr = document.createAttribute('title');
+        //给title属性赋值
+        titleAttr.value = '一号标题';
+        //设置title属性节点
+        h1.setAttributeNode(titleAttr);
+    </script>
+</body>
+
+</html>

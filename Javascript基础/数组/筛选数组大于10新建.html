@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //将数组[2,0,15,77,99,4,45,6,7,1,8,66]中大于10 的元素选出来，放入新数组
+        //1. 声明一个新数组newArr,用于存放
+        //2， 遍历原来的旧数组，找出大于10的元素
+        //3. 依次追加给新数组
+        var arr = [2, 0, 15, 77, 99, 4, 45, 6, 7, 1, 8, 66];
+        var newArr = [];
+        //var j = 0;
+        // 方法1：设置新数组的索引号的变量为j
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > 10) {
+                // newArr[j] = arr[i];
+                //新数组的索引号必须从0开始
+                //j++;
+
+                //.length可动态监测数组长度
+                newArr[newArr.length] = arr[i];//方法2
+            }
+        }
+        console.log(newArr);
+    </script>
+</body>
+
+</html>

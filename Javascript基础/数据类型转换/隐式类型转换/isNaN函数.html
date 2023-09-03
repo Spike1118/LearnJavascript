@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //isNaN()函数：判断指定的参数是否为NaN(非数字类型);
+        //返回结果为Boolean类型。即任何不能被转换为数值的参数，都会让这个函数返回true
+
+        //执行过程：1.先调用Number(参数)函数;
+        //2.然后将Number(参数)的返回结果是否为数值。如果不为数值，则结果为true;
+        //如果为数值，则结果为false。
+
+        console.log(isNaN('123'));//false
+
+        console.log(isNaN(null))//false,因为Number(null)的转换结果为0
+
+        console.log(isNaN('abc'));//true,因为Number('abc')的转换结果为NaN
+
+        console.log(isNaN(undefined));//true
+
+        console.log(isNaN(NaN));//true
+    </script>
+</body>
+
+</html>

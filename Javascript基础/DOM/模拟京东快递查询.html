@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .search {
+            position: relative;
+            width: 178px;
+            margin: 100px;
+            /* background: red; */
+        }
+
+        .con {
+            display: none;
+            position: absolute;
+            top: -40px;
+            width: 171px;
+            border: 1px solid rgba(0, 0, 0, .2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+            padding: 5px 0;
+            font-size: 18px;
+            line-height: 20px;
+            color: #333;
+        }
+
+        .con::before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 28px;
+            left: 18px;
+            border: 8px solid #000;
+            border-style: solid dashed dashed;
+            border-color: #fff transparent transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <div class="con">123</div>
+        <input type="text" class="jd" placeholder="请输入您的快递单号">
+    </div>
+    <script>
+        //核心思路：将表单的内容赋值给大号字体盒子con
+        var con = document.querySelector('.con');
+        var jd_input = document.querySelector('.jd');
+        //表单检测用户输入：给表单绑定键盘事件
+        //不可用keydown和keypress
+        //keydown和keypress会在文字落入文本框之前触发事件，即显示con盒子，并且keypress不识别功能键
+        jd_input.addEventListener('keyup', function () {
+            if (this.value == "") { //判断表单里的是否有值，没有则隐藏.con,否则显示con
+                con.style.display = 'none';
+            } else {
+                con.style.display = 'block';
+                con.innerHTML = this.value; // 把快递单号的值（value）获取过来并赋值给con盒子(innerHTML\innerText)作为内容
+            }
+        })
+        //当我们失去焦点，就隐藏这个盒子
+        jd_input.addEventListener('blur', function () {
+            con.style.display = 'none';
+        })
+        //当我们得到焦点，就显示这个盒子
+        jd_input.addEventListener('focus', function () {
+            if (this.value !== '') {
+                con.style.display = 'block';
+            }
+
+        })
+    </script>
+</body>
+
+</html>

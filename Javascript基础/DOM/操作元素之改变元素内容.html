@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        p{
+            font-size: 20px;
+            width: 300px;
+            height: 50px;
+            color: white;
+            background-color: pink;
+            line-height: 50px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <button>显示系统当前时间</button>
+    <div>某个时间</div>
+    <p>系统时间</p>
+    <script>
+        //点击按钮后，某个时间显示系统当前时间
+        //1.获取元素
+        var btn=document.querySelector('button');
+        var div=document.querySelector('div');
+        //2.绑定鼠标点击事件
+        // btn.onclick
+        //3.添加事件处理程序
+        btn.onclick=function(){
+            div.innerText=getDate();
+        }
+        function getDate(){
+        var date=new Date;
+        var year=date.getFullYear();
+        var month=date.getMonth()+1;
+        var dates=date.getDate();
+        var arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六']//用arr数组的索引值返回星期几
+        var day=date.getDay();
+        return '今天是'+year+'年'+month+'月'+dates+'日 '+arr[day];// 今天是2023年5月2日 星期二 '日'内部加一个空格与星期二隔开
+        }
+        //操作元素也可以不绑定事件
+        var p=document.querySelector('p');
+        p.innerText=getDate();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1. replace 替换字符 replace('被替换的字符','替换为的字符')
+        var str='abcdabcd';
+        console.log(str.replace('a','z'));// replace 只会替换第一个出现的字符
+        //有一个字符串'abcdoxcoffo' 要求把里面的o替换为z
+        var str4='abcdoxcoffo';
+        while(str4.indexOf('o')!==-1){
+            str4=str4.replace('o','z')
+        }
+        console.log(str4);
+        //2. 字符串转换为数组 split('分隔符') 分隔符取绝于字符串中用分隔的符号
+        var str1='red,blue,pink';
+        console.log(str1.split(','));
+        var str2='red& blue& pink';
+        console.log(str2.split('&'));   
+    </script>
+</body>
+</html>

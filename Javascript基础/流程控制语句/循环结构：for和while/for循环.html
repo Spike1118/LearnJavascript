@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //for循环的语法结构：
+        //for(初始化变量; 条件表达式; 操作表达式){
+        //循环体
+        // }
+
+
+
+        // for( var i=1; i<=100;i++){
+        //     console.log('你好吗');
+        // }
+        //for循环的执行过程：
+        //1.首先执行里面的初始化变量，var i=1;但是这句话在for循环里只执行一次
+        //2.然后再执行i<=100,判断是否满足，如果满足，则执行循环体，否则退出for循环
+        //3.最后去执行i++   第一轮结束
+        //4.接着再去执行i<=100,如果满足，则执行循环体，否则退出for循环。    第二轮结束
+
+        for (let i = 1; i < 13; i = i + 4) {
+            console.log(i);
+        }   //1,5,9
+
+        for (let i = 1; i < 10; i = i + 3) {
+            i = i + 1;
+            console.log(i);//2,6,10
+        }
+
+        for (let i = 1; i <= 10; i++) { }
+        console.log(i);//11
+
+        for (let i = 1; i < 7; i = i + 3) { }
+        console.log(i);//7
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number函数</title>
+</head>
+
+<body>
+    <script>
+        const result = Number('123');
+        var a = '123';
+        a = Number('123');
+        //如果字符串中是纯数字，则直接将其转换为数字。
+        console.log(a);//123
+
+        //自定义常量是ES6中新增的语法。它的语法格式是这样的：
+        //const 常量名称 = 常量取值;
+        const b = Number('');
+        console.log(b);//0
+        //如果字符串是一个空串或者是一个全是空格的字符串，则转换为 0。
+
+        const c = Number('caoxin');
+        console.log(c);//NaN
+        //只要字符串中包含了其他非数字的内容（小数点按数字来算），则转换为 NaN。
+        //使用 Number() 函数之后，如果无法转换为数字，就会转换为 NaN。
+
+        const d = Number(true);
+        const e = Number(false);
+        console.log(d);//1
+        console.log(e);//0
+        //布尔值-->数字，true-->1,false-->0
+
+        const f = Number(null);
+        console.log(f);//0
+        //null --> 数字，结果为：0
+
+        const g = Number(undefined);
+        console.log(g);//NaN
+        //undefined --> 数字，结果为：NaN
+
+    </script>
+</body>
+
+</html>

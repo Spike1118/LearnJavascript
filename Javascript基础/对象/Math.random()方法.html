@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Math.random(): 生成[0,1)之间的随机浮点数
+
+        //生成[0,x)之间的随机数
+        // Math.round(Math.random() * x);
+
+        //生成[x,y)之间的随机数
+        // Math.round(Math.random() * (y - x) + x);
+
+        //生成[x,y]之间的随机整数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log(getRandom(2, 10));
+
+        //随机点名
+        const arr = ['操鑫', '李影', '邓紫棋', '徐志强', '薛之谦'];
+        const index = getRandom(0, arr.length - 1);
+        console.log(arr[index]);
+    </script>
+</body>
+
+</html>

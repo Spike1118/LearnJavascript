@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //将数组[2,0,6,11,8,9,0,12,77,88]中的0去掉后，形成一个不包含0的数组
+        //1.需要一个新的数组存放筛选后的数据
+        //2. 遍历原来的数组，把不是0 的数据添加到新数组(此时注意采用数组名+索引号的格式接收数据)
+        //3. 新数组里的个数用length不断累加
+        var newArr = [];
+        var arr = [2, 0, 6, 11, 8, 9, 0, 12, 77, 88];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
+    </script>
+</body>
+
+</html>

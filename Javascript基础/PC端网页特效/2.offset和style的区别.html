@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: pink;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" style="width: 300px;"></div>
+    <script>
+        var box = document.querySelector('.box');
+        console.log(box.offsetWidth);   //offset可以得到任意样式表的值，获得的值没有单位
+        console.log(box.style.width);   //style只能获取行内样式的值  获得是带有单位的字符串 且不包含padding和border
+        // box.offsetWidth = '400px';  //offset是只读，不能修改
+        box.style.width = '400px';  //style.width 是可读写属性，可以获取且可以修改值
+        //想要获取元素的大小位置，用offset更好
+        //给元素改值，用style更好
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //查找字符串'acbdsospoddoueeo'中o出现的位置及次数
+        //核心算法： 首先找到o第一次出现的位置
+        //只要indexOf()返回的值不是-1，则继续往后寻找O，
+        //因为indexOf只能找到第一个，所以后面的查找，一定是当前索引加1，从而继续寻找
+        var str='acbdsospoddoueeo';
+        var index=str.indexOf('o');
+        var num=0;
+        while(index!==-1){
+           console.log(index); //打印出O出现的位置
+           num++;
+           index=str.indexOf('o',index+1);
+        }
+        console.log('o出现的次数是：'+num);
+    </script>
+</body>
+</html>

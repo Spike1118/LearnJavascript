@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        fn1();
+        function fn1() {//函数的声明提升，即运行在所有代码前面
+            console.log('hello1');
+        }
+        //fn2();//会报错
+        var fn2 = function () {//变量声明提前，但赋值留在原地，即函数留在原地，所以fn2不是一个函数
+            console.log('hello2');
+        }
+    </script>
+</body>
+
+</html>

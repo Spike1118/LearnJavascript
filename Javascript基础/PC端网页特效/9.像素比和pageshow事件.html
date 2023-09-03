@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //当一条会话历史记录被执行的时候将会触发页面显示 (pageshow) 事件。
+        //(这包括了后退/前进按钮操作，同时也会在 onload 事件触发后初始化页面时触发)
+        //persisted 只读	boolean	表示网页是否是来自缓存
+        window.addEventListener('pageshow', function () {
+            alert(11);
+        })
+    </script>
+    <a href="http://www.itcast.cn">链接</a>
+
+    //但是 火狐中，有个特点，有个“往返缓存”，这个缓存中不仅保存着页面数据，还保存了DOM和JavaScript的状态；实际上是将整个页面都保存在了内存里。
+
+    //所以此时后退按钮不能刷新页面。
+
+    //此时可以使用
+    //pageshow事件来触发。，这个事件在页面显示时触发，无论页面是否来自缓存。在重新加载页面中，pageshow会在load事件触发后触发；
+    //根据事件对象中的persisted来判断是否是缓存中的页面触发的pageshow事件
+
+    //`注意这个事件给window添加。`
+
+</body>
+
+</html>

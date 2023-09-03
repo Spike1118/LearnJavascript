@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //第一步，输入身高和体重
+        const height = parseFloat(prompt('请输入身高，单位是米'));
+        const weight = parseFloat(prompt('请输入体重，单位是公斤'));
+        //parseFloat() 函数可解析一个字符串，并返回一个浮点数。
+        //该函数指定字符串中的首个字符是否是数字。如果是，则对字符串进行解析，直到到达数字的末端为止，
+        //然后以数字返回该数字，而不是作为字符串。
+
+        //第二步，计算BIM指数
+        const BMI = weight / Math.pow(height, 2);
+        //pow() 方法返回 x 的 y 次幂。
+
+        //第三步，if语句来判断
+        if (BMI < 18.5) {
+            alert('过轻');
+        } else if (BMI < 25) {
+            alert('正常');
+        }
+        else if (BMI < 28) {
+            alert('过重');
+        }
+        else if (BMI < 32) {
+            alert('肥胖');
+        }
+        else {
+            alert('非常肥胖');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // window.onload = function () {
+        //     var btn = document.querySelector('button');
+        //     btn.addEventListener('click', function () {
+        //         alert('点击我');
+        //     })
+        // }
+        window.onload = function () {   //onload 传统注册方式只会执行最后的一个
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                alert('点击我');
+            })
+        }
+        window.addEventListener('load', function () {
+            alert(22);
+        })
+        document.addEventListener('DOMContentLoaded', function () {
+            alert('33');
+        })
+        //1.load：等页面所有内容加载完毕后，才执行 ,包含页面Dom元素，图片，css，flash等
+        //2.DOMContentLoaded: 等DOM加载完毕就执行，不包含图片，css，flash等
+    </script>
+    <button>点击我</button>
+</body>
+
+</html>

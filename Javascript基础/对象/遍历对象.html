@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //遍历对象
+        // function Star(name, age, sex) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sex = sex;
+        //     this.sing = function (sang) {
+        //         console.log(sang);
+        //     }
+        // }
+        // var ldh = new Star('刘德华', 55, '男');
+        // for (var k in ldh) {
+        //     console.log(k);
+        //     console.log(ldh[k]);
+        // }
+
+        var obj = {
+            name: 'pink',
+            age: 18,
+            sex: '男',
+            fn: function () { }
+        }
+        for (var k in obj) {
+            console.log(k);//k是变量，输出 属性名
+            console.log(obj[k]);//obj[k]    输出 属性值
+        }
+        //for in 里面的变量 习惯写为 k 或key
+    </script>
+</body>
+
+</html>

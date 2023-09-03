@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //利用函数判断是否闰年
+        //能被4整除且不能整除100或者能被400整除的为闰年
+
+        function fn(num1) {
+            var flag = false;//先假定不是闰年
+            if (num1 % 4 == 0 && num1 % 100 != 0 || num1 % 400 == 0) {
+                flag = true;//如果为闰年，则给flag赋值为true
+            }
+            return flag;
+        }
+        console.log(fn(2004));//true
+        console.log(fn(2023));//false
+        console.log(fn(1997));//false
+    </script>
+</body>
+
+</html>

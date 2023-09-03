@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.作用域：是一个函数或变量的作用范围，作用域在函数定义时就确定了
+        //作用：增强程序的可靠性，减少命名冲突
+
+        //2.分为全局作用域、函数作用域
+        //全局作用域：作用于script标签内部，或者一个独立的JS文件
+        //函数作用域：局部作用域，作用于函数内部代码环境
+
+        //3.变量的分类：①全局变量   在任何位置都可以使用
+        //②局部变量     只能在函数内部使用，函数外部失效
+
+        //4.以下情况为局部变量：
+        //①形参     ②在函数内部直接使用var声明的变量
+        //当局部变量和全局变量同时存在，局部先使用自己的变量
+
+        //特殊情况：无论是在函数外还是在函数内，变量如果未经声明就赋值（即不加var/const/let),
+        //这个变量是全局变量
+
+        //5.优缺点：
+        //全局变量：优点：在任何范围内都可使用
+        //缺点：    不安全，易污染
+        //局部变量： 优点：安全
+        //缺点：只能在函数内部使用
+
+        //在函数中要访问全局变量，可以使用window对象(比如说在函数作用域和全局作用域中都声明了变量a,如果想访问a,可以使用window.a)
+
+        /*
+        var a = 100;//全局变量
+        function fn() {
+            var b = 10; //局部变量
+            console.log(b);
+        }
+        fn();//10
+        console.log(a);//100
+        */
+
+        // function fn(a) {
+        //     console.log(a); //局部变量
+        // }
+        // var a = 100;    //全局变量
+        // console.log(a);//100
+        // fn(10);//10
+
+        // function fn() {
+        //     var a = 10;//局部变量
+        //     console.log(a);
+        // }
+        // fn();
+        // console.log(a);//局部变量，函数外不可使用
+        // function fn() {
+        //     a = 10;//全局变量
+        //     a++;//全局加1
+        //     console.log(a);//11
+        // }
+        // fn();
+        // console.log(a);//11
+
+        var a = 100;
+        function fn() {
+            var a = 10;
+            a++;
+            console.log(a);//11
+        }
+        fn();
+        console.log(a);//100
+    </script>
+</body>
+
+</html>

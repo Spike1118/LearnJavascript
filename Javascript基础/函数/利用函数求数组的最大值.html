@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //利用函数求数组的最大值
+        function getArrMax(arr) {
+            var max = arr[0];
+            for (var i = 1; i <= arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+        //在实际开发中，经常用一个变量来接收 函数的返回结果 这样使用函数会更简单
+        // var rel = getArrMax([1, 2, 3, 4, 5, 8]);
+        var rel = getArrMax([1, 22, 33, 14, 75, 8]);
+        //利用函数就可以快速简单求出任意数组的最大值
+
+        console.log(rel);
+
+    </script>
+</body>
+
+</html>

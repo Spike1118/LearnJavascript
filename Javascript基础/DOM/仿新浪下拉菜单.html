@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ZH-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿新浪下拉菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .box {
+            width: 80px;
+            float: left;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        .a1 {
+            display: inline-block;
+            width: 76px;
+            height: 40px;
+            border: 1px solid #fcfcfc;
+            line-height: 40px;
+            color: #4c4c4c;
+            padding: 0 2px 0 0;
+            border-width: 0 1px;
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+        }
+
+        .box>.box1>.a1 span {
+            display: inline-block;
+            width: 8px;
+            height: 5px;
+            margin: 0 0 0 5px;
+            overflow: hidden;
+            vertical-align: middle;
+            font-size: 12px;
+            line-height: 13px;
+            background: url(../images/icon.png) 0 -977px no-repeat;
+        }
+
+        .box>.box1>.a1 em {
+            margin-top: -10px;
+            background: url(../images/icom.png) 0 -1017px;
+            width: 14px;
+            height: 11px;
+            position: absolute;
+        }
+
+        .box2 {
+            display: none;
+            width: 77px;
+            border: 1px solid #EBBE7A;
+            overflow: hidden;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+            top: 41px;
+            left: 0;
+            border-top: 0;
+        }
+
+        #list {
+            width: 80px;
+            border-bottom: 1px solid #fecc5b;
+            margin: 0 0 -2px;
+        }
+
+        #list li {
+            width: 50px;
+            line-height: 31px;
+            border-bottom: 1px solid #fecc5b;
+            color: #333;
+            padding: 0 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">
+            <a href="" class="a1">
+                <i>
+                    微博
+                    <em></em>
+                    <span></span>
+                </i>
+            </a>
+            <div class="box2">
+                <ul id="list">
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var box = document.querySelector('.box');
+    var a1 = document.querySelector('.a1');
+    var box2 = document.querySelector('.box2');
+    var lists = document.querySelectorAll('li');
+    box.onmouseover = function () {
+        a1.style.backgroundColor = '#ccc';
+        box2.style.display = 'block';
+    }
+    box.onmouseout = function () {
+        a1.style.backgroundColor = '';
+        box2.style.display = 'none';
+    }
+    a1.onmouseover = function () {
+        a1.style.color = '#ff8400';
+    }
+    a1.onmouseout = function () {
+        a1.style.color = '#4c4c4c';
+    }
+    for (var i = 0; i < lists.length; i++) {
+        lists[i].onmouseover = function () {
+            this.style.color = '#ff8400';
+            this.style.backgroundColor = '#fff5da';
+        }
+    }
+    for (var i = 0; i < lists.length; i++) {
+        lists[i].onmouseout = function () {
+            this.style.backgroundColor = '';
+            this.style.color = '#4c4c4c';
+        }
+    }
+</script>
+
+</html>

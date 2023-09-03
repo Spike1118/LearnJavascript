@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获得焦点和失去焦点</title>
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="手机">
+    <script>
+        //1.获得事件
+        var text = document.querySelector('input');
+        //2. 注册事件   得到焦点
+        text.onfocus = function () {
+            // console.log('得到焦点');
+            if (this.value === '手机') {    //如果初始值是手机，则将初始值赋值为空字符
+                this.value = '';
+            }
+            //获得焦点，使文本框里的文字颜色变黑
+            this.style.color = '#333';
+        }
+        //3. 失去焦点
+        text.onblur = function () {
+            // console.log('失去焦点');
+            if (this.value === '') {    //如果初始值是空字符，则将初始值赋值为手机
+                this.value = '手机';
+            }
+            //失去焦点，使文本框里的文字颜色变浅色
+            this.style.color = '#999';
+        }
+    </script>
+
+</body>
+
+</html>

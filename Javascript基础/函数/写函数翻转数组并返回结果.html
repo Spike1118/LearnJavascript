@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //写一个函数，能翻转传入的数组['red', 'green', 'blue', 'pink', 'purple']，并把翻转结果通过返回值返回。
+        var newArr = [];
+        function fanzhuan(arr) {
+            for (var i = arr.length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arr[i];
+            }
+            return newArr;
+        }
+        var arr1 = ['red', 'green', 'blue', 'pink', 'purple'];
+        console.log(fanzhuan(arr1));
+    </script>
+</body>
+
+</html>

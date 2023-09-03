@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //给定一个字符串，如：'abasdffggghhjjkkgfddssssree43333',问题如下：
+        //1.字符串的长度
+        var str='abasdffggghhjjkkgfddssssree43333';
+        console.log(str.length);//32
+        //2.取出指定位置的字符，如：0，3，5，9等 charAt(返回指定的位置字符)
+        console.log(str.charAt(0));
+        console.log(str.charAt(3));
+        console.log(str.charAt(5));
+        console.log(str.charAt(9));
+        //3.查找指定字符是否在以上字符串中存在，如：i,c,b等
+        console.log(str.indexOf('i'));//-1 indexOf('要查找的字符'，[起始位置]) 如果找不到就返回-1
+        console.log(str.indexOf('b'));
+        //4.替换指定字符，如：g替换为22，ss替换为b等操作方法
+        console.log(str.replace('g','22'));
+        //5.截取指定开始位置到结束位置的字符串，如：取得1-5的字符串
+        console.log(str.substr(1,5));
+        //6.找出以上字符串中出现次数最多的字符和出现的次数
+        //核心算法：(1)用charAt()遍历字符串
+        //(2)如果字符存在对象O中，属性值o[chars]+1,不存在则赋值为1
+        //(3)遍历对象o
+        var o={};
+        for(var i=0;i<str.length;i++){
+            var chars=str.charAt(i);
+            if(o[chars]){
+                o[chars]++;
+            }else{
+                o[chars]=1;
+            }
+        }
+        var max=0;//最多的字符
+        var ch='';//出现的次数
+        for(var k in o){//for(var k in o){} 遍历对象，k为属性名，o为对象名，o[k]为属性值
+            if(o[k]>max){
+                max=o[k];
+                ch=k;
+            }
+        }
+        console.log(max);
+        console.log('出现最多的次数是：'+ch);
+    </script>
+</body>
+</html>

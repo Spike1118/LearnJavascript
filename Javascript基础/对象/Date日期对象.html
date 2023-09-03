@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+        var arr=new Array(); //创建了一个数组对象
+        var obj=new Object; //创建了一个对象实例
+        //1.使用Date(),如果没有参数，就返回当前系统的时间
+        var date=new Date();
+        console.log(date);
+        //2.参数的常用写法，数字型，2023，01，03或者是字符串型 ‘2023-01-03 8:8:8’
+        var date1=new Date(2023,01,03);
+        console.log(date1);// 数值打印出来的是2月，不是1月，因为月份是从0开始，即1月份为0
+        var date2=new Date('2023-01-03 8:8:8');
+        console.log(date2);
+        </script>
+    </body>
+</html>

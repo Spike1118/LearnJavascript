@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <p>abc</p>
+    <div class="inner"></div>
+    <div class="create"></div>
+    <script>
+        //执行下面语句也会造成页面重绘
+        /* window.onload = function () {
+            document.write('<div>123</div>')
+        } */
+        //1.    document.write()创建元素    如果页面文档流加载完毕，再执行这个，会造成页面重绘
+        // var btn = document.querySelector('button');
+        // btn.onclick = function () {
+        //     document.write('<div>123</div>')
+        // }
+        //2. innerHTML 创建元素
+        var inner = document.querySelector('.inner');
+        // for (var i = 0; i <= 100; i++) {
+        //     inner.innerHTML += '<a href="#">百度</a>';
+        // }
+        //采用拼接数组的方式高效执行
+        // var arr = [];
+        // for (var i = 0; i <= 100; i++) {
+        //     arr.push('<a href="#">百度</a>');
+        // }
+        // inner.innerHTML = arr.join('');   //join() 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串，
+        //用逗号或指定的分隔符字符串分隔。
+        //3.document.createElement()创建元素
+        var create = document.querySelector('.create');
+        for (var i = 0; i <= 100; i++) {
+            var a = document.createElement('a');
+            create.appendChild(a);
+        }
+    </script>
+</body>
+
+</html>

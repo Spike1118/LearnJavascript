@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    //Math 属于一个工具类，里面封装了数学运算相关的属性和方法
+    //Math.PI      圆周率      Math对象的属性
+    //Math.abs()   返回绝对值
+    //Math.random()    生成0-1的随机浮点数     取值范围[0,1)
+    //Math.floor()        向下取整(往小取值)
+    //Math.ceil()       向上取整(往大取值)
+    //Math.round()      四舍五入取整(正数四舍五入，负数五舍六入)
+    //Math.max(x,y,z)   返回多个数的最大值
+    //Math.min(x,y,z)   返回多个数的最小值
+    //Math.pow(x,y)     乘方：返回x的y次幂
+    //Math.sqrt()       开方：对一个数进行开方运算
+    </script>
+    <script>
+        //举例：
+        var num = -0.1;
+        console.log(Math.abs(num));// 取绝对值 0.1
+        console.log(Math.floor(num));// 向下取整 -1
+        console.log(Math.ceil(num));// 向上取整 -0
+        console.log(Math.round(num));// 五舍六入 -0
+        console.log(Math.random()); //随机生成一个[0,1)的浮点数
+
+        //Math.abs()中可以接收字符串类型的数字，此时会将字符串做隐式类型转换，
+        //然后再调用Math.abs()方法
+        //举例：
+        console.log(Math.abs(2));//2
+        console.log(Math.abs("-2"));//2
+        console.log(Math.abs('Hello'));//NaN
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100%;
+            position: relative;
+            background-color: #cd1c1c;
+        }
+
+        a {
+            display: block;
+            width: 100%;
+            height: 80px;
+            background: url(../images/luzhou.jpg) no-repeat 50% 0;
+        }
+
+        .close {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: url(../images/close.jpg) no-repeat;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a href="#" target="_blank"></a>
+        <i class="close"></i>
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        var close = document.querySelector('.close');
+        close.onclick = function () {
+            box.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

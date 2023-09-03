@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn(a, b) {
+            arguments[4] = 67;//修改实参第四个为67
+            // arguments.push(8);   //错误，arguments不能修改数组长度
+            console.log(arguments[4]);//实参67
+            console.log(fn[2]);//undefined
+        }
+        fn(1, 4, 5, 7, 19);
+
+    </script>
+</body>
+
+</html>

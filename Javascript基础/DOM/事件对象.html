@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <script>
+        //事件对象：事件发生后，跟事件相关的一系列信息数据的集合都放到这个对象里面，这个对象就是事件对象
+        //事件发生时，就会产生事件对象，并且系统会以实参的形式传递给事件处理函数
+        //所以在事件处理函数中声明一个形参来接收事件对象
+        //事件对象也有兼容性问题 ie678 通过window.event 
+        //兼容性写法：e||window.event
+        var div = document.querySelector('div');
+        // div.onclick = function (e) {    //形参e
+        //     //事件对象  
+        //     e = e || window.event;
+        //     console.log(e);
+        // }
+        div.addEventListener('click', function (e) {
+            //只要“||”前面为false, 不管“||”后面是true 还是 false，都返回 “||” 后面的值。
+            //只要“||”前面为true, 不管“||”后面是true 还是 false，都返回 “||” 前面的值。
+            e = e || window.event;
+            console.log(e);
+        })
+    </script>
+</body>
+
+</html>

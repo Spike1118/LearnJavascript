@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <q>
+        今天是
+        <span>星期一</span>
+    </q>
+    <script>
+        var div=document.querySelector('div');
+        //1.innerText 不识别HTML标签    非标准      会去掉空格和换行
+        // div.innerText='<strong>今天是：</strong> 2023';
+        //2.innerText 识别HTML标签      w3c标准     保留空格和换行
+        div.innerHTML='<strong>今天是：</strong> 2023';
+        //3.两个属性都是可读写的    可以获取元素里面的内容
+        var q=document.querySelector('q');
+        console.log(q.innerText);
+        console.log(q.innerHTML);
+
+    </script>
+</body>
+</html>

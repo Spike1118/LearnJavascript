@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //逻辑运算符有三个，即"&""||"!"
+
+        //&&： 与（且）。两个都为真，结果才为真。特点：一假则假。
+
+        //|| ：或。只要有一个是真，结果就是真。特点：特点: 一真则真。
+
+        //! ：非。对一个布尔值进行取反。特点: 真变假, 假变真。
+
+        //连比的写法
+        console.log(3 < 2 && 2 < 4);
+
+        const a = prompt("请输入你的年龄");
+        if (a >= 18 && a <= 65) {
+            alert('可以上班');
+        }
+        else {
+            alert("准备退休");
+        }
+    </script>
+</body>
+
+</html>

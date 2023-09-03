@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,
+        li,
+        ol,
+        dl,
+        dt,
+        dd,
+        div,
+        p,
+        span,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .login-header {
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 24px;
+        }
+
+        /* a {
+            text-decoration: none;
+            color: #000;
+        } */
+
+        .login {
+            width: 512px;
+            height: 280px;
+            background-color: #fff;
+            /*水平垂直居中：absolute+margin auto*/
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ebebeb;
+            /* box-shadow: 水平偏移 垂直偏移 模糊程度 阴影大小 阴影颜色
+            水平偏移：正值向右 负值向左     垂直偏移：正值向下 负值向上
+            模糊程度：不能为负值    后面还可以再加一个inset属性，表示内阴影。
+            如果不写，则默认表示外阴影
+            */
+            box-shadow: 0px 0px 20px #ddd;
+            display: none;
+            z-index: 999;
+        }
+
+        .login-title {
+            width: 100%;
+            height: 40px;
+            position: relative;
+            text-align: center;
+            line-height: 40px;
+            font-size: 18px;
+            margin: 10px 0px 0px 0px;
+            cursor: move;
+        }
+
+        .login-title span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            font-size: 12px;
+            right: -20px;
+            top: -30px;
+            background: #fff;
+            border-radius: 20px;
+            border: 1px solid #ebebeb;
+        }
+
+        .login-content {
+            margin-top: 20px;
+        }
+
+        .login-button {
+            width: 50%;
+            text-align: center;
+            margin: 30px auto 0px auto;
+            font-size: 14px;
+            border: 1px solid #ebebeb;
+            line-height: 40px;
+        }
+
+        .login-bg {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .3);
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .login-button a {
+            display: block;
+        }
+
+        .list-input {
+            float: left;
+            width: 350px;
+            height: 35px;
+            line-height: 35px;
+            border: 1px solid #ebebeb;
+            /* text-indent 属性能定义一个块元素首行文本内容之前的缩进量。*/
+            text-indent: 5px;
+        }
+
+        .login-input {
+            overflow: hidden;
+            margin: 0px 0px 20px 0px;
+        }
+
+        label {
+            float: left;
+            padding-right: 10px;
+            width: 90px;
+            text-align: right;
+            font-size: 14px;
+            height: 35px;
+            line-height: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- href="javascript:;" 就是去掉 a 标签的默认行为，
+        跟 href="javascript:void(0)" 是一样的 -->
+    <div class="login-header"><a href="javascript:;" id="link">点击，弹出登录框</a></div>
+    <div class="login">
+        <div class="login-title">登录会员
+            <div class="close-login">
+                <span>
+                    <a href="javascript:;" id="close-btn">关闭</a>
+                </span>
+            </div>
+        </div>
+        <div class="login-content">
+            <div class="login-input">
+                <label for="username">用户名：</label>
+                <input type="text" placeholder="请输入用户名" name="info[username]" id="username" class="list-input">
+            </div>
+            <div class="login-input">
+                <label for="password">登录密码：</label>
+                <input type="password" placeholder="请输入登录密码" name="info[password]" id="password" class="list-input">
+            </div>
+        </div>
+        <div class="login-button"><a href="javascirpt:void(0);">登录会员</a></div>
+    </div>
+    <!--遮罩层-->
+    <div class="login-bg" id="bg"></div>
+    <script>
+        // 弹出框，我们也称为模态框。
+        // 1.点击弹出层，会弹出模态框， 并且显示灰色半透明的遮挡层。display: block
+        // 2.点击关闭按钮，可以关闭模态框，并且同时关闭灰色半透明遮挡层。display: none
+        // 3.鼠标放到模态框最上面一行，可以按住鼠标拖拽模态框在页面中移动。
+        //触发事件是鼠标按下mousedown,鼠标拖拽mousemove,鼠标松开mouseup
+        // 4.鼠标松开，可以停止拖动模态框移动
+        //触发事件鼠标松开mouseup
+
+        //1.获取元素
+        var link = document.querySelector('#link');
+        var mask = document.querySelector('.login-bg');
+        var login = document.querySelector('.login');
+        var title = document.querySelector('.login-title');
+        var closeBtn = document.querySelector('#close-btn');
+        //2.点击弹出模态框这个链接，遮罩层和模态框出现
+        link.addEventListener('click', function () {
+            mask.style.display = 'block';
+            login.style.display = 'block';
+        })
+        //3.点击关闭按钮，遮罩层和模态框消失
+        closeBtn.addEventListener('click', function () {
+            mask.style.display = 'none';
+            login.style.display = 'none';
+        })
+        //4.开始拖拽
+        //(1)按下鼠标时，就获得鼠标在盒子login的坐标
+        title.addEventListener('mousedown', function (e) {
+            var x = e.pageX - login.offsetLeft;
+            var y = e.pageY - login.offsetTop;
+            //注意鼠标移动事件要写在按下事件里面，因为按下了才去移动的
+            //(2)移动鼠标时，用鼠标在网页中的鼠标减去鼠标在盒子中的坐标，得到的结果就是
+            //模态框的left和top值
+            document.addEventListener('mousemove', move)
+            function move(e) {
+                login.style.left = e.pageX - x + 'px';
+                login.style.top = e.pageY - y + 'px';
+            }
+            //(3)鼠标弹起，就让鼠标移动事件移除
+            document.addEventListener('mouseup', function () {
+                document.removeEventListener('mousemove', move);
+            });
+        })
+
+    </script>
+</body>
+
+</html>

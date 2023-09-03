@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //字符串内的值是不可变的，虽然看上去是改变了，但实际上是在内存里开辟了一个空间，来存储了新的字符串值
+        //重新给字符串赋值，就会在内存中开辟空间，这个就是字符串的不可变性
+        //如果大量拼接字符串，会占据大量内存空间，会使效率降低
+        var str='adc';
+        console.log(str);//'adc'
+        str='bef';
+        console.log(str);//str的内存地址发生改变
+        var str='';
+        for(var i=1;i<1000000;i++){
+            str+=i;
+        }
+        console.log(str);//这个结果需要大量时间来显示，因为需要不断开辟内存空间
+    </script>
+</body>
+</html>

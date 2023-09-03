@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //利用构造函数创建对象
+        function Star(uname, age, sex) {
+            this.uname = uname;//添加属性和方法必须加this
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (sang) {
+                console.log(sang);
+            }
+        }
+        //调用构造函数必须是new 构造函数名
+        var ldh = new Star('刘德华', 55, '男');//1.new创建一个对象实例
+        console.log(typeof ldh);//object
+        var zxy = new Star('张学友', 53, '男');//2.this指向的是new创建的对象实例
+        console.log(zxy.uname);
+        console.log(zxy['age']);
+        ldh.sing('冰雨');
+    </script>
+</body>
+
+</html>

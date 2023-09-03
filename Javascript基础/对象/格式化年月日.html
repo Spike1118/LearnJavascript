@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //格式化年月日
+        var date=new Date();
+        console.log(date.getFullYear());//返回当前日期的年份
+        console.log(date.getMonth()+1);//月份是0~11，所以要加1
+        console.log(date.getDate());//返回当前日期
+        console.log(date.getDay());//返回当前星期几,星期日是0，星期一到星期六是1~6
+        //写一个2023年5月2日 星期二
+        var year=date.getFullYear();
+        var month=date.getMonth()+1;
+        var dates=date.getDate();
+        var arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六']//用arr数组的索引值返回星期几
+        var day=date.getDay();
+        console.log('今天是'+year+'年'+month+'月'+dates+'日 '+arr[day]);// 今天是2023年5月2日 星期二 '日'内部加一个空格与星期二隔开
+
+    </script>
+</body>
+</html>

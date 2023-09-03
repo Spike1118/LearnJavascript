@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //setInterval定时器
+        //语法格式：window.setInterval(回调函数，[间隔的毫秒数])；
+        //setInterval()方法重复调用一个函数，每隔这个时间，就去调用一次回调函数
+        //1.window可以省略
+        //2.这个回调函数可以直接写函数，也可以写函数名或者采用字符串'函数名()'三种形式
+        //3.间隔的毫秒数默认是0，如果写，单位必须是毫秒。表示每隔多少毫秒自动调用这个函数
+        //4.因为定时器很多，所以经常给定时器赋值一个标识符
+        //5.第一次执行也是间隔毫秒数之后执行，之后每隔毫秒数就执行一次
+        setInterval(function () {
+            console.log('继续输出');
+        }, 2000)
+    </script>
+</body>
+
+</html>

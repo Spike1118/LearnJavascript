@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+        }
+
+        span {
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+            position: absolute;
+            left: 0;
+            top: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn500">点击李影走到500</button>
+    <button class="btn800">点击李影走到800</button>
+    <div></div>
+    <span>李影</span>
+    <script>
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+        //缓动动画函数封装obj 目标对象，target 目标位置
+        //思路：
+        //1.让盒子每次移动的距离慢慢变小，速度就会慢下来
+        //2.核心算法：(目标距离-现在的位置)/10 作为每次移动的距离，即步长
+        //停止的条件：当现在的位置=目标距离时，清除定时器
+        function animate(obj, target) {
+            //解决方案：让元素只有一个定时器执行
+            //先清除以前的定时器，只保留当前的定时器执行
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {   //将定时器看作是对象的属性
+                //步长值要写到计时器里
+                //步长值要改为整数，不要出现小数的问题 步长值要向上取整 Math.ceil()
+                var step = (target - obj.offsetLeft) / 10;
+                //可以让动画函数从 800 移动到 500。
+                //当我们点击按钮时候，判断步长是正值还是负值
+                //1.如果是正值，则步长往大了取整
+                //2.如果是负值，则步长 向小了取整
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    //停止动画，本质上就是停止定时器
+                    clearInterval(obj.timer)
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+
+            }, 15)
+        }
+        // animate(div, 300);
+        // animate(span, 200);
+        btn500.addEventListener('click', function () {
+            animate(span, 500);
+        })
+        btn800.addEventListener('click', function () {
+            animate(span, 800);
+        })
+    </script>
+</body>
+
+</html>

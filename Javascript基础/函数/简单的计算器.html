@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //写一个函数，用户输入任意两个数的任意算术运算，并能计算出运算后的结果
+
+
+        var tan = parseInt(prompt('1.+法\n2.-法\n3.*法\n4./法、\n5.退出'));//先弹出让用户选择哪种运算
+
+        function jisuan(shuzi) {
+            var num1 = parseInt(prompt('第一个数:'));
+            var num2 = parseInt(prompt('第二个数：'));
+            var result;
+            switch (parseInt(shuzi)) {
+                case 1:
+                    result = num1 + num2;
+                    break;
+                case 2:
+                    result = num1 - num2;
+                    break;
+                case 3:
+                    result = num1 * num2;
+                    break;
+                case 4:
+                    result = num1 / num2;
+                    break;
+                case 5:
+                    break;
+            }
+            alert(result);
+            tan = prompt('1. + 法\n2.- 法\n3.* 法\n4./ 法、\n5.退出');//让用户重复的接着选择用哪种运算
+        }
+
+        //采用while循环，根据用户输入的运算符来调用jisuan(shuzi)函数
+        while (true) {
+            if (tan == '1') {
+                jisuan('1');
+            }
+            if (tan == '2') {
+                jisuan('2');
+            }
+            if (tan == '3') {
+                jisuan('3');
+            }
+            if (tan == '4') {
+                jisuan('4');
+            }
+            if (tan == '5') {
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>

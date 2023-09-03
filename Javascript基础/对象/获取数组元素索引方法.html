@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //返回数组元素索引号方法：indexOf(数组元素) 作用是返回该数组元素的索引号 从最前面开始查找
+        // var arr=['red','blue','green','blue'];
+        // console.log(arr.indexOf('green'));//2
+        // console.log(arr.indexOf('blue'));//1
+        //只获取指定的第一个元素索引号
+        
+        //如果指定的元素没在数组里，索引号则显示-1
+        var arr=['red','blue','blue'];
+        console.log(arr.indexOf('green'));//-1
+
+        //返回数组元素索引号方法：lastIndexOf(数组元素) 作用是返回该数组元素的索引号 从最后面开始查找
+        //如果指定的元素没在数组里，索引号则显示-1
+        console.log(arr.lastIndexOf('blue'));//2
+
+    </script>
+</body>
+</html>

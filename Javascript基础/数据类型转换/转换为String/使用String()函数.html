@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //String(变量 / 常量);
+        console.log(String(true));//'true'
+        console.log(String(2));//'2'
+        var a = '操鑫';
+        console.log(String(a));//'操鑫'
+        console.log(typeof String(a));//string
+
+        var b = null;
+        b = String(b);
+        console.log(b);//'null'
+        console.log(typeof b); //string
+
+        console.log(String(undefined));//'undefined'
+
+        //对于 Number、Boolean、String、Object 而言，
+        //本质上就是调用 toString()方法，返回结果同 toString()方法。
+
+        //但是对于 null 和 undefined，则不会调用 toString()方法。
+        //它会将 null 直接转换为 "null"。将 undefined 直接转换为 "undefined"。
+        //String()不会影响到原数值，它会将转换的结果返回。
+    </script>
+</body>
+
+</html>

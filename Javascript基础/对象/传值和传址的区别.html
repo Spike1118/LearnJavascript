@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //传值
+        let a = 1;
+        let b = a;
+        b = 2;
+        console.log(a);//1
+        console.log(b);//2,将a赋值给b,再改变b的值，a的值不会被改变
+
+        //对于引用类型的数据，赋值相当于地址拷贝，本质上a,b就是同一个东西
+        var obj1 = new Object();
+        obj1.name = '孙悟空';
+        var obj2 = obj1;
+        obj2.name = '猪八戒';//修改obj2.name的属性值为'猪八戒'，则obj1.name也会同步改变
+        console.log(obj1.name);//'猪八戒'，obj1赋值给obj2,使obj1和obj2指向堆内存中同一个引用地址
+        console.log(obj2.name);
+
+        //把引用类型 A 的值赋值给 B，让A和B相互不受影响的话，
+        //可以通过 Object.assign() 来复制对象。
+        var obj4 = { name: '孙悟空' };
+        var obj3 = Object.assign({}, obj1);
+        obj3.name = '沙悟净';
+        console.log(obj3);//{name: '沙悟净'}
+        console.log(obj4);//{name: '孙悟空'}
+
+    </script>
+</body>
+
+</html>

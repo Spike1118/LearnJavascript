@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hezi">哈哈哈哈哈哈哈</div>
+    <div class="hz">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+        </ul>
+        <ul>
+            <li>33</li>
+            <li>33</li>
+            <li>55</li>
+            <li>55</li>
+        </ul>
+    </div>
+    <script>
+        //1.getElementsByClassName() 根据类名获得某些元素集合 以伪元素存储
+        var hzs=document.getElementsByClassName('hz');
+        console.log(hzs);
+        //2.querySelector 返回指定选择器的第一个元素    切记 里面要写选择器的符号 #hezi .hz
+        var firstBox=document.querySelector('.hz');
+        console.log(firstBox);
+        var ul=document.querySelector('ul');
+        console.log(ul);
+        //3.querySelectorAll 返回指定选择器的元素集合
+        var lis=document.querySelectorAll('li');
+        console.log(lis);
+    </script>
+</body>
+</html>

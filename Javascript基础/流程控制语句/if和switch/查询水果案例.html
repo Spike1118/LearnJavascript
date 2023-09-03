@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //用户在弹出框里输入一个水果，如果有，就弹出水果的价格；如果没有就弹出'没有此水果’
+
+        const fruit = prompt('请输入你需要的水果：');
+        switch (fruit) {
+            case '香蕉':
+                alert(4);
+                break;
+            case '葡萄':
+                alert(6);
+                break;
+            case '苹果':
+                alert(5);
+                break;
+            default:
+                alert('没有此水果');
+        }
+    </script>
+</body>
+
+</html>

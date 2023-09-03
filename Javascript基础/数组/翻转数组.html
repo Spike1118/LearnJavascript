@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //将数组['red','green','blue','white','black','pink','yellow']的内容反过来存放
+        //1.新建一个数组存放反过来的数据
+        //2.对旧数组进行遍历，反过来遍历，即将i设置为arr.length-1,然后再i--;
+        //3. 新数组索引号为newArr.length
+        var arr = ['red', 'blue', 'white', 'black', 'pink', 'yellow'];
+        var newArr = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+            newArr[newArr.length] = arr[i];
+        }
+        console.log(newArr);
+    </script>
+</body>
+
+</html>

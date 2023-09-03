@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div style="width: 200px; height: 200px;background-color: red">
+        哈哈哈啊哈
+    </div> -->
+    <script>
+        //用JS实现上面的页面效果
+
+        //1.创建元素
+        //document.createElement('div');
+
+        //2.创建文本节点
+        //document.createTextNode('文本内容')
+
+        //3.创建属性
+        //document.createAttribute('属性名')
+
+        //4.属性赋值
+        //属性名.value='属性值'
+
+        //5.设置属性节点
+        //元素.setAttribuetNode(属性名)
+
+        //6.作为子节点追加到父节点下
+        //父节点.appendChild(子节点)
+
+        //获取body:document.body
+
+    </script>
+    <script>
+        //1.创建元素
+        var div = document.createElement('div');
+        //把子节点——div元素节点追加到父节点——body上
+        document.body.appendChild(div);     //获取body:document.body
+
+        //2.创建文本节点
+        var text = document.createTextNode('哈哈哈哈哈');
+        //把子节点——text文本节点追加到父节点——div上
+        div.appendChild(text);
+
+        //3.创建属性
+        var styleAttr = document.createAttribute('style');
+
+        //4.属性赋值
+        styleAttr.value = 'width: 200px;height: 200px;background-color: red;';
+
+        //5.设置属性节点
+        div.setAttributeNode(styleAttr);
+
+    </script>
+</body>
+
+</html>

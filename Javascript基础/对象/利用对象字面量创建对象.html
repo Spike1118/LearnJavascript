@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //对象字面量，即{}
+        const dog1 = {
+            name: '可可',
+            age: '5',
+            color: 'red',
+            skills: function () {
+                console.log('bark');
+            }
+        }
+
+        //对象的使用
+        //调用对象的属性
+        //方法1：对象名.属性名
+        console.log(dog1.age);//5
+        console.log(dog1.name);
+        //方法2：对象名['属性名']
+        console.log(dog1['color']);//red
+
+        //调用对象的方法
+        //对象名.方法名()
+        dog1.skills();//调用对象的方法，必须加()
+    </script>
+</body>
+
+</html>

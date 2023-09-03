@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入初始化css文件 -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- 引入首页的css文件 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 引入swipercss文件 -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- 引入swiper.js文件 -->
+    <script src="js/swiper.min.js"></script>
+    <!-- 引入自己的js文件 -->
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <!-- 顶部 -->
+    <header class="app">
+        <ul>
+            <li>
+                <img src="images/close.png" alt="">
+            </li>
+            <li>
+                <img src="images/logo.png" alt="">
+            </li>
+            <li>打开京东App，购物更轻松</li>
+            <li>立即打开</li>
+        </ul>
+    </header>
+    <!-- 搜索 -->
+    <div class="search-wrap">
+        <div class="search-btn"></div>
+        <div class="search">
+            <div class="jd-icon"></div>
+            <div class="sou"></div>
+        </div>
+        <div class="search-login">登陆</div>
+    </div>
+    <!-- 主体部分 -->
+    <div class="main-content">
+        <!-- 滑动图 -->
+        <div class="slider">
+            <!-- Swiper 注意这里不要改变里面的结构和类名 -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="upload/banner.dpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="upload/banner1.dpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="upload/banner2.dpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="upload/banner3.dpg" alt="">
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+</body>
+
+</html>

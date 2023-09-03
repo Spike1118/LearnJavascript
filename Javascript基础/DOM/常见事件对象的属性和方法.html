@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>abc</li>
+        <li>abc</li>
+        <li>abc</li>
+    </ul>
+    <script>
+        //常见的事件对象的属性和方法
+        //1.e.target 返回的是触发事件的对象(元素)   this返回的绑定事件的对象(元素)
+        var div = document.querySelector('div');
+        div.addEventListener('click', function (e) {
+            console.log(e.target);
+            console.log(this);
+        })
+        var lis = document.querySelectorAll('li');
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function (e) {
+            console.log(e.target);  //打印出li元素 是点击li触发的   所以e.target指向的就是li
+            console.log(this);  //给ul绑定了事件，那this指向的就是ul
+        })
+        //了解兼容性    e.srcElement 只兼容ie6-8
+        div.onclick = function (e) {
+            e = e || window.event;
+            var target = e.target || e.srcElement;
+            console.log(target);
+        }
+        //2. 了解 e.currentTarget跟this相似，只是ie6-8不认识
+    </script>
+</body>
+
+</html>

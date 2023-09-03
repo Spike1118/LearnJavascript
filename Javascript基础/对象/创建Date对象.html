@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //内置Date对象处理日期和时间
+        //与Math对象不同的是，Date对象是一个构造函数，需要先实例化后才能使用
+        //创建Date对象有两种写法
+
+        //写法一：不写参数，直接使用，显示的是系统当前时间
+        var date1 = new Date();
+        console.log(date1);//Tue Apr 18 2023 22:10:56 GMT+0800 (中国标准时间)
+        console.log(typeof date1);//string
+
+        //写法二：写参数，获取指定的时间
+        //当参数是数字
+        var date11 = new Date(2023, 3, 18, 18, 12, 55);
+        console.log(date11);//Tue Apr 18 2023 18: 12: 55 GMT + 0800(中国标准时间)
+
+        var date12 = new Date(2023, 3, 18);
+        console.log(date12);//Tue Apr 18 2023 00:00:00 GMT+0800 (中国标准时间)
+
+        const arr1 = [2023, 3, 18, 22, 27, 45];
+        var date13 = new Date(...arr1);
+        console.log(date13);//Tue Apr 18 2023 22:27:45 GMT+0800 (中国标准时间)
+
+        //当参数是字符串
+        var date21 = new Date('2023-4-18');
+        console.log(date21);//Tue Apr 18 2023 00:00:00 GMT+0800 (中国标准时间)
+
+        var date22 = new Date('Tue Apr 18 2023 00:00:00 GMT+0800 (中国标准时间)');
+        console.log(date22);//Tue Apr 18 2023 00:00:00 GMT+0800 (中国标准时间)
+
+        var date23 = new Date('2023/4/18,23:00:12');
+        console.log(date23);//Tue Apr 18 2023 23:00:12 GMT+0800 (中国标准时间)
+
+        //当参数是时间戳
+        const date31 = new Date(1591950413388);
+        console.log(date31);//Fri Jun 12 2020 16:26:53 GMT+0800 (中国标准时间)
+
+        //先把时间对象转换成时间戳，然后再把时间戳转换成时间对象
+        const timestamp = new Date().getTime();
+        const date32 = new Date(timestamp);
+        console.log(date32);
+    </script>
+</body>
+
+</html>

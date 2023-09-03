@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parseInt()函数和parseFloat()函数</title>
+</head>
+
+<body>
+    <script>
+        //parse 表示“转换”，Int 表示“整数”,parseInt()：将传入的数据当作字符串来处理，从左至右提取数值，一旦遇到非数值就立即停止；
+        //停止时如果还没有提取到数值，就返回NaN。
+
+        //parseInt()、parseFloat()会将传入的数据当作字符串来处理。
+        //如果对非 String使用 parseInt()、parseFloat()，它会先将其转换为 String 然后再操作。
+
+
+        const a = parseInt('5');
+        console.log(a);//5
+
+        const b = parseInt('119火警');
+        console.log(b);//119,只保留字符串最开头的数字，后面的中文自动消失
+
+        var c = parseInt('  ');
+        console.log(c);//NaN
+
+        const d = parseInt(169.23);
+        console.log(d);//169    先将169.23转换成'169.23',然后再操作
+
+        const e = parseInt(5.8) + parseInt(4.7);
+        console.log(e);//9  自动截断小数：取整，不四舍五入
+
+        //带两个参数时，表示在转换时，包含了进制转换。
+        //无论 parseInt() 里面的进制参数是多少，最终的转换结果是十进制。
+        const f = '110';
+        const num = parseInt(f, 16);//将f当成16进制来看待，转换成十进制的num
+        console.log(num);//272
+
+        var g = '5';
+        var num1 = parseInt(g, 2);
+        console.log(num1);// 打印结果：NaN。因为 二进制中没有 5 这个数，转换失败。
+
+        // parseFloat():将字符串转为浮点数
+        //和 parseInt()的作用类似，不同的是，parseFloat()可以获得小数部分。
+        var h = '123.456.789px';
+        console.log(parseFloat(h));//123.456
+    </script>
+</body>
+
+</html>

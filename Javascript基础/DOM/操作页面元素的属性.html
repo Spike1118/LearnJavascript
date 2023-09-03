@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="box">呵呵</div>
+    <script>
+        //操作页面元素
+        //1)操作HTML的所有属性
+        //①getAttribute('属性名')
+        //获取元素的属性
+        //如果有属性，返回属性值
+        //如果没有属性，返回null
+
+        //②setAttribute('属性名'，'属性值')
+        //设置元素的属性
+
+        //③removerAttribute('属性名')
+        //删除元素的属性
+
+        //获取元素
+        var div = document.getElementById('box');
+        console.log(div);
+        //获取元素的属性
+        console.log(div.getAttribute('class'));//box
+        console.log(div.getAttribute('title'));//null
+
+        // var styleAttr = document.createAttribute('style');
+        // styleAttr.value = 'border-radius: 50%; text-align: center;line-height: 200px;';
+        // div.setAttributeNode(styleAttr);
+
+        //设置元素的属性
+        div.setAttribute('style', 'border-radius: 50%; text-align: center;line-height: 200px;');
+
+        //删除元素的属性
+        div.removeAttribute('class');
+    </script>
+</body>
+
+</html>

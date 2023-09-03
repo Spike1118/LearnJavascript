@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //模板字符串中调用函数
+
+        function getName() {
+            return 'qianguyihao';
+        }
+        console.log(`www.${getName()}.com`);    //字符串中调用函数的位置，将会显示函数执行后的返回值
+    </script>
+
+    <script>
+        //模板字符串中支持嵌套使用
+        const nameList = ['千古壹号', '许嵩', '解忧少帅'];
+        function myTemplate() {
+            return `<ul>
+            ${nameList.map((item) => `<li>${item}</li>`).join('')}
+            </ul>`; //join('')的意思是，把数组里的内容合并成一个字符串
+        }
+        document.body.innerHTML = myTemplate();
+    </script>
+
+    <script>
+        const a = true;
+        console.log(typeof a);  //控制台输出boolean
+        //布尔型和数字型相加时，true按1来算，false按0来算
+    </script>
+</body>
+
+</html>

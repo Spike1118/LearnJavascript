@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //隐式类型转换——运算符：加号+
+        //1.字符串+xx=字符串
+        result1 = 1 + 2 + '3';
+        console.log(result1);//'33'
+
+        result2 = '1' + 2 + 3;
+        console.log(result2);//'123'
+        //任何值和字符串做加法运算，都会先调用String()函数转换为字符串，
+        //然后再做拼串操作，最终的运算结果是字符串。
+
+        //Boolean型和数字型相加时，true按1来算，false按0来算。即先调用Number()函数，
+        //将Boolean类型转换为Number类型，然后再和数字相加
+        const a = true + 1;
+        console.log(a);//2
+
+        const b = false + 1;
+        console.log(b);
+
+        //null+数字=数字 等价于：0+数字
+
+        //undefined+数字=NaN
+
+        //任何值和NaN运算的结果都是NaN
+        var result3 = true + NaN;
+        console.log(result3);//NaN
+
+        //任何非Number类型的值做 - * / %运算时，会将这些值转换为Number
+        //然后再运算(内部调用的是Number()函数)，运算结果是Number类型
+        var result4 = 100 * '10';
+        console.log(result4);//1000
+
+
+    </script>
+</body>
+
+</html>

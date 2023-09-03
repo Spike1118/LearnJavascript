@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+            /* height: 300px; */
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/s.gif" alt="">
+    <div>亲，上午好,好好写代码</div>
+    <script>
+        //1.获取元素
+        var div=document.querySelector('div');
+        var img=document.querySelector('img');
+        //2.得到当前的小时数
+        var date=new Date;
+        var h=date.getHours();
+        //3.判断小时数并修改文字和图片
+        if(h<12){
+            div.innerHTML='亲，上午好,好好写代码';
+            img.src='../images/s.gif';
+        }else if(h<18){
+            div.innerHTML='亲，下午好,好好写代码';
+            img.src='../images/x.gif';
+        }else if(h<24){
+            div.innerHTML='亲，晚上好,好好写代码';
+            img.src='../images/w.gif';
+        }
+    </script>
+</body>
+</html>

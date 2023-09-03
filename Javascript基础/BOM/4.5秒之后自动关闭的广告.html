@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="../images/ad.jpg" alt="" class="ad">
+    <script>
+        //setTimeout的调用函数又称为回调函数
+        //普通函数是按照代码顺序调用，而回调函数，就是回头调用的意思
+        //定时器中的调用函数，事件处理函数都是回调函数
+        var ad = document.querySelector('.ad');
+        setTimeout(function () {
+            ad.style.display = 'none';
+        }, 5000)
+    </script>
+</body>
+
+</html>

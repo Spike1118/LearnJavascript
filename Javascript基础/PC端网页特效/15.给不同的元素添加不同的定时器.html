@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+        }
+
+        span {
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+            position: absolute;
+            left: 0;
+            top: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击李影才走</button>
+    <div></div>
+    <span>李影</span>
+    <script>
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+        //封装简单的动画函数    object 目标对象 target 目标位置
+        //利用 JS 是一门动态语言，可以很方便的给当前对象添加属性。
+        //var obj={}
+        //obj.name='andy';
+        //给不同的元素添加不同的定时器
+        // 当我们不断的点击按钮，这个元素的速度会越来越快，因为开启了太多的定时器
+        function animate(obj, target) {
+            //解决方案：让元素只有一个定时器执行
+            //先清除以前的定时器，只保留当前的定时器执行
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {   //将定时器看作是对象的属性
+                if (obj.offsetLeft >= target) {
+                    //停止动画，本质上就是停止定时器
+                    clearInterval(obj.timer)
+                }
+                obj.style.left = obj.offsetLeft + 5 + 'px';
+
+            }, 30)
+        }
+        // animate(div, 300);
+        // animate(span, 200);
+        btn.addEventListener('click', function () {
+            animate(span, 200);
+        })
+    </script>
+</body>
+
+</html>

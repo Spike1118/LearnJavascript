@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>引入jQuery的注意事项</title>
+</head>
+
+<body>
+    <!-- 引入jQuery的注意事项
+如果要编写jQuery的代码，一定要用两个script标签，
+一个用来引入jQuery，
+一个用来编写代码，且不可将jQuery的代码写在第一个script标签当中，这样编写的代码将没有任何作用。
+一定要在第一个script引入jQuery，上面的script标签编写代码，下面的script引入jQuery -->
+    <script src="./script/jquery-3.6.3.js"></script>
+
+    <script>
+//这里编写jquery代码
+    </script>
+</body>
+
+</html>

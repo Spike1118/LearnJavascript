@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //2.打印出正金字塔
+
+        // for (i = 1; i <= 4; i++) {
+        //     for (var k = 1; k <= 4 - i; k++) {
+        //         document.write("&ensp; ");
+        //     }
+        //     for (j = 1; j <= 2 * i - 1; j++) {
+        //         document.write("☆");
+        //     }
+        //     document.write("<br />");
+        // }
+
+        //3.打印出倒金字塔
+
+        //2.控制打印的行数为4
+        for (i = 4; i >= 1; i--) {
+
+            //3.每行加上空格数k，形成金字塔
+            for (var k = 1; k <= 4 - i; k++) {
+                document.write("&ensp; ");
+            }
+
+            //1.打印出每行的星星数j
+            for (j = 1; j <= 2 * i - 1; j++) {
+                document.write("☆");
+            }
+            document.write("<br />");
+        }
+
+    </script>
+</body>
+
+</html>

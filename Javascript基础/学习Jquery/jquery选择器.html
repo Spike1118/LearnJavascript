@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Hello Jquery</h1>
+    <h2 class="title">Hello Jquery</h2>
+    <img src="" alt="" class="img1">
+    <script src="./script/jquery-3.6.3.js"></script>
+    <script>
+        // 改变元素样式
+        $("h1").css("color", "red");
+
+        //获取元素文本
+        var txt = $(".title").text();
+        console.log(txt);
+        // 上面两行代码使用$(.title)选择器找到class值为title的元素，再用text方法获取元素的文本
+        //再用var声明一个txt变量，用"=”文本赋值给txt变量
+        //最后使用console.log在控制台输出文本内容
+
+        //设置元素属性
+        // $(".img1").attr("src", "./images/RE4YrNp.jpg");
+        //img中没有设置图片的src属性，可通过jquery的attr方法设置
+        //attr方法可以设置两个参数，一个是要设置的属性名，另一个是属性值
+
+    </script>
+
+    <script></script>
+</body>
+
+</html>

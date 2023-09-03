@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //如果要保存一个人的信息，可以采用对象，它可以清晰的表达，
+        //对象里面的属性均是键值对
+        //利用对象字面量创建对象{}
+        var person = {};    //创建了一个空对象
+        person.name = '王二';
+        person.age = 35;
+        person.sex = '男';
+        person.height = '180';
+
+        var obj = new Object;
+        //对象中的属性值可以是任何数据类型，包括函数(即方法)
+        obj.sayName = function () {
+            console.log('smghave');
+        };
+
+        console.log(obj.sayName);//没加括号，就是获取方法
+        console.log('---------');
+        console.log(obj.sayName());//'smghave' 加了括号，就是调用方法，即执行函数体内容
+
+        var obj1 = new Object();
+        obj1.test = undefined;
+        var obj2 = new Object();
+        obj2.name = 'smyhave';
+        //对象中的属性值也可以是一个对象
+        obj1.test = obj2;
+        console.log(obj1.test.name);//'smyhave'
+    </script>
+</body>
+
+</html>

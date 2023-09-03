@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // case1:变量已生命，但未赋值
+        let name;
+        console.log(name);  //undefined
+        console.log(typeof name);   //undefined
+
+        // case2：未定义时
+        console.log(typeof a);  // undefined
+        // console.log(a); // 打印结果：Uncaught ReferenceError: a is not defined
+
+        // case3:在定义一个函数时，
+        // 如果末尾没有 return 语句，
+        // 那么，其实就是 return undefined
+        function foo() { }
+
+        console.log(foo()); // undefined
+
+        // case4: 调用函数时，未传参
+        function foo(name) {
+            console.log(name);
+        }
+        foo();  // 调用函数时，未传参。执行函数后的打印结果：undefined
+
+        // 实际开发中，如果调用函数时没有传参，
+        // 我们可以根据需要给形参设置一个默认值：
+        function foo(name) {
+            name = name || 'qianguyihao';
+
+        }
+
+        foo();
+
+
+        // ES6写法
+        function foo(name = 'qianguyihao') {
+
+        }
+
+        foo();
+
+
+        // undefined 实际上是由 null 衍生出来的，
+        // 所以null == undefined的结果为 true。
+
+        // 但是 null === undefined 的结果是 false。
+        // 它们虽然相似，但还是有区别的，
+        // 其中一个区别是，和数字运算时：
+        // 10 + null 结果为 10。
+
+        // 10 + undefined 结果为 NaN。
+    </script>
+</body>
+
+</html>

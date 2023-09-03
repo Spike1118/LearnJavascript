@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: pink;
+            font-size: 18px;
+            width: 200px;
+            height: 300px;
+        }
+
+        .charge {
+            color: #fff;
+            font-size: 25px;
+            margin-top: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">文本</div>
+    <script>
+        var text = document.querySelector('div');
+        //1.通过element.style 获得修改元素样式  如果样式比较少 或者 功能简单的情况使用
+        text.onclick = function () {
+            // this.style.color = '#fff';
+            // this.style.fontSize = '25px';
+            // this.style.marginTop = '100px';
+            // this.style.textAlign = 'center';
+
+            //2.通过element.className 修改元素的样式    适合于样式较多或者功能复杂的情况使用
+            // this.className = 'charge';      //会覆盖原先的类名
+            //3.如果想要保留原先的类名，可用多类名选择器
+            this.className = 'first charge';
+        }
+    </script>
+</body>
+
+</html>

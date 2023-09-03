@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //函数就是封装了一段可以重复执行调用的代码块 目的： 使大量代码重复使用
+        //1.声明函数
+        function getSum(num1, num2) {
+            var sum = 0;
+            for (var i = num1; i <= num2; i++) {
+                sum += i;
+            }
+            console.log(sum);
+        }
+        //2.调用函数
+        getSum(1, 100);//5050
+        getSum(50, 100);//3825
+        getSum(10, 50);//1230
+
+    </script>
+</body>
+
+</html>

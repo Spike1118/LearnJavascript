@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //写一个函数，能对传入的数组[10,32,41,8,9,18]按照从小到大进行排序，并把排序结果通过返回值返回
+        //冒泡排序
+        function maopao(arr) {
+            for (var i = 0; i <= arr.length - 1; i++) {     //排序的趟数是arr.length-1
+                for (var j = 0; j <= arr.length - i - 1; j++) {//每一趟交换的次数arr.length-i-1
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];      //temp=num1;  num1=num2;  num2=temp
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        var arr1 = [10, 32, 41, 8, 9, 18];
+        console.log(maopao(arr1));
+        console.log(maopao instanceof Object);//true,说明函数就是属于Object
+    </script>
+</body>
+
+</html>

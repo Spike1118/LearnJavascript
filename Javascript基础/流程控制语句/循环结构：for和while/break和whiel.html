@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //通过break终止循环语句
+        for (let i = 0; i < 5; i++) {
+            console.log('i的值:' + i);
+            if (i == 2) {
+                break;//注意，虽然在if里使用了break,但这里作用的是外部的for循环
+            }
+        }   /*i的值:0
+            i的值: 1
+            i的值: 2 */
+
+        //label的使用
+        outer: for (let i = 0; i < 5; i++) {
+            console.log('外层循环i的值：' + i);
+            for (let j = 0; j < 5; j++) {
+                break outer;
+                console.log('内层循环j的值:' + j);
+            }
+        }
+    </script>
+</body>
+
+</html>

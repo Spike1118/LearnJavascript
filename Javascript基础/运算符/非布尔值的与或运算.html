@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var result = 5 && 6;
+        console.log("result:" + result);//'6'
+
+        //第一个值为true,会继续执行后面的内容
+        const a1 = "qiguyihao";
+        a1 && alert("看a1出不出来");//可以弹出alert框
+        //第一个值为false，不会继续执行后面的内容
+        const a2 = undefined;
+        a2 && alert("看a2出不出来");
+
+        //JS中的||属于短路的或(实际开发中做容错处理)：
+        //如果第一个值为true，则不会执行后面的内容。
+        //如果第一个值为false，则继续执行第二条语句，并返回第二个值
+        let result;
+        let errorMsg = '';
+        if (result && reult.reCode != 0) {
+            //接口返回异常码时
+            errorMSG = result.msg || '活动太火爆，请稍后再试';
+            //文案提示信息，优先用接口返回的msg字段，
+            //其次用'活动太火爆，请稍后再试'这个文案兜底
+        }
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //打印1~100之间的质数，即打印2~100之间的质数
+        //先列出2~100的所有数
+        for (var i = 2; i <= 100; i++) {
+            //创建一个布尔值，来保存结果，默认i是质数
+            let flog = true;
+
+            //判断i是否是质数
+            for (var j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    flog = false;
+                    //如果进入判断，则i不是质数，修改flog的值为false;
+                }
+            }
+
+            //如果i是质数，则打印i
+            if (flog) {
+                document.write(i + '\n');
+            }
+        }
+
+    </script>
+</body>
+
+</html>

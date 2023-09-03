@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //转换为 Boolean
+        //转换结果列举【重要】
+        //其他的数据类型都可以转换为 Boolean 类型。
+        // 无论是隐式转换，还是显示转换，转换结果都是一样的。有下面几种情况：
+
+        // 情况一：数字 --> 布尔。 0 和 NaN的转换结果 false，其余的都是 true。
+        //比如 Boolean(NaN)的结果是 false。
+
+        //情况二：字符串 ---> 布尔。空串的转换结果是false，其余的都是 true。
+
+        //情况三：null和undefined都会转换为false
+
+        //情况四：引用数据类型会转换成为true。注意，空数组[]和空对象{}，转换结果也是true
+
+
+        const a = 1;
+        console.log(a == true);//true,a做了隐式转换为布尔值，再做比较，但a仍是number
+        console.log(typeof a);//number
+
+        console.log(0 == true);//false
+
+        const b = !!3;//!!可以显示转换为布尔值。
+        console.log(typeof b);//boolean
+
+        console.log(typeof (Boolean(null)));//boolean
+        //Boolean()函数可以显示转换为布尔值。
+
+        //16 进制的数字，以0x开头
+
+        //8 进制的数字，以0开头
+
+        //2 进制的数字，0b开头（不是所有的浏览器都支持：chrome 和火狐支持，IE 不支持）
+
+        //避免浏览器识别差异，可用parseInt()中传递第二个进制参数，来指定当前数字的进制，例如：
+        var x = '070';
+        x = parseInt(x, 8);
+        console.log(x);//56,'070'当作8进制，再转换为十进制
+    </script>
+</body>
+
+</html>

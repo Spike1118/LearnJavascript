@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //用户输入一个数字，做补零操作，操作如下：
+        //当数字小于10时，在数字前面补加一个0，大于10时，不做操作，最后弹出操作后的数字
+
+        //采用三元表达式
+        const time = prompt('请输入数字：');
+        const result = time < 10 ? '0' + time : time;
+        alert(result);
+    </script>
+</body>
+
+</html>

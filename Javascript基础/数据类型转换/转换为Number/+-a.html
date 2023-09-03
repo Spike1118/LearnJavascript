@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //任何值做+a、-a运算时，底层调用的是Number()函数。不会改变原数值；
+        //得到的结果，会改变正负性
+        const a1 = '123';
+        console.log(+a1);//123
+        console.log(-a1);//-123
+
+        const a2 = '123abc';
+        console.log(+a2);//NaN
+        console.log(-a2);//NaN
+
+        const a3 = null;
+        console.log(+a3);//0
+        console.log(-a3);//0
+
+        const a4 = undefined;
+        console.log(+a4);//NaN
+        console.log(-a4);//NaN
+
+        const a5 = true;
+        console.log(+a5);//1
+        console.log(-a5);//-1
+
+        const a6 = false;
+        console.log(+a6);//0
+        console.log(-a6);//-0
+    </script>
+</body>
+
+</html>

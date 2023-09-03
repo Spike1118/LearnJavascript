@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('我' + '爱' + '你');    //连字符
+        console.log('我+爱+你');    //原样输出
+        console.log(1 + 2 + 3); //加号，输出6
+
+        //如果加号两边都是Number类型，此时是数字相加，否则就是连接字符串的连字符
+
+        var a = '1';
+        var b = 2;
+        var e = a + b;
+        console.log(a + b); //12
+        console.log(typeof e);//string
+
+
+        var c = 1;
+        var d = 2;
+        console.log('c' + b);//在变量中加入字符串进行拼接，可以被同化为字符串。
+    </script>
+</body>
+
+</html>

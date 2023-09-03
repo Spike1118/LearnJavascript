@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a1 = 'qianguyihao';
+        var a2 = 29;
+        var a3 = true;
+
+        var a4 = [1, 2, 3];
+        var a5 = { name: 'qianguyihao', age: 29 };
+
+        var a6 = null;
+        var a7 = undefined;
+
+        //变量.toString();
+        //常量.toString(); // 这里的常量，不允许是数字，但可以是其它常量
+
+        // 小技巧：在 chrome 浏览器的控制台中，
+        // Number类型、Boolean类型的打印结果是蓝色的，
+        // String类型的打印结果是黑色的。
+
+        //变量.toString()不会影响到原变量，它会将转换的结果返回。
+        //当然我们还可以直接写成a = a.toString()，这样的话，就是直接修改原变量。
+        console.log(a1.toString()); // "qianguyihao"
+        console.log(a2.toString()); // "29"
+        console.log(a3.toString()); // "true"
+        console.log(a4.toString()); // "1,2,3"
+        console.log(a5.toString()); // "[object,Object]"
+
+
+        // console.log(a6.toString()); //报错
+        // console.log(a7.toString()); //报错
+        // null和undefined这两个没有toString()方法，所以它们不能用toString()。
+        //如果调用，会报错。
+        //若不确定一个值是不是null或undefined,可以使用String()函数
+
+        //多数情况下，toString()不接收任何参数；
+        //当然也有例外：Number 类型的变量，在调用 toString()时，可以在方法中传递一个整数作为参数。
+        //此时它会把数字转换为指定的进制，如果不指定则默认转换为 10 进制。例如：
+        var a = 255;
+        a = a.toString(2);
+        console.log(a); //11111111
+        console.log(typeof (a));    //string
+
+        //纯小数的小数点后面，如果紧跟连续6个或6个以上的0时，
+        //将用e来表示这个小数
+        const num1 = 0.000001;
+        console.log(num1.toString());//'0.000001'
+
+        const num2 = 0.0000001;
+        console.log(num2.toString());//'1e-7'
+
+        const num3 = 1.0000001;
+        console.log(num3.toString());//'1.0000001'
+
+        const num4 = 0.10000001;
+        console.log(num4.toString());//'0.10000001'
+
+        //常量可以直接调用 toString() 方法，
+        //但这里的常量，不允许是数字。举例如下：
+        1..toString();
+        1.2.toString();
+        (1).toString();
+        console.log(1..toString());//'1'
+        console.log(1.2.toString());//'1.2'
+        console.log((1).toString());//'1'
+       // 1.toString();会报错，JS会认为“.”为小数点，它后面的字符是非法的
+
+       //除了 null、undefined之外，其他的常量都有对应的特殊的引用类型——基本包装类型，
+        //所以代码在解释执行的时候，会将常量转为基本包装类型，这样就可以调用相应的引用类型的方法。
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.setTimeout定时器的语法格式： window.setTimeout(调用的函数，延迟时间)
+        //2.window可以省略
+        //3.延迟时间的单位是毫秒 不写的默认是0，即立即执行
+        //4.调用的函数可以是完整函数，也可以是函数名，
+        //5.或者是"函数名()"(不推荐)
+        //6.网页上有很多定时器，可以使用标识符区分每个定时器(名字)
+        // setTimeout(function () {
+        //     console.log('爆炸了');
+        // }, 2000);
+        function callback() {
+            console.log('爆炸了');
+        }
+        var time1 = setTimeout(callback, 2000);
+        var time2 = setTimeout(callback, 5000);
+        // setTimeout('callback()', 2000); 不推荐
+    </script>
+</body>
+
+</html>

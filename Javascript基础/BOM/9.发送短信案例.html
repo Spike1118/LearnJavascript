@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    手机号码：<input type="number">
+    <button>发送</button>
+    <script>
+        //按钮点击后，按钮会禁用，即disabled为true
+        //点击后按钮的内容会改变，按钮的内容通过innerHTML改变
+        //里面的秒数是一直变化的，所以用setInterval定时器
+        //当秒数为0后，按钮内容恢复发送，定时器被清除
+        var btn = document.querySelector('button');
+        var time = 3;   //定义剩下的秒数
+        btn.addEventListener('click', function () {
+            btn.disabled = true;
+            var timer = setInterval(function () {
+                if (time == 0) {
+                    //清除定时器和恢复按钮
+                    clearInterval(timer);
+                    btn.disabled = false;
+                    btn.innerHTML = '发送';
+                    time = 3;
+                } else {
+                    btn.innerHTML = '还剩下' + time + '秒';
+                    time--;
+                }
+            }, 1000)
+        })
+
+    </script>
+</body>
+
+</html>
