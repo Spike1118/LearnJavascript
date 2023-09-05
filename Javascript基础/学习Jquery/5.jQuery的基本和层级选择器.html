@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul class="nav">
+        <li id="li1">我是ul的</li>
+        <li>我是ul的</li>
+        <li>我是ul的</li>
+        <li>我是ul的</li>
+    </ul>
+    <script>
+        $(function () {
+            console.log($(".nav")); //类选择器  获取指定同一类的元素
+            console.log($("#li1")); //  ID选择器    获取指定ID的元素
+            console.log($("*"));    //全选选择器    匹配所有元素
+            console.log($("ul li"));    //后代选择器    匹配 ul的所有li元素，包括孙子等
+        })
+
+    </script>
+</body>
+
+</html>
