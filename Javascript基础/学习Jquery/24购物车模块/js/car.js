@@ -18,4 +18,21 @@ $(function(){
             $(".checkall").prop("checked",false);
         }
     })
+    //3.购物车商品增减
+    // (1)核心思路：首先声明一个变量，每次点击+(increment)时，就让这个变量加1，再把这个变量赋值给文本框
+        //(2)将+的兄弟文本框的初始值用val()获取然后再赋值给n变量,并在每次点击的时候加1
+        //(3)将n赋值给+的兄弟文本框
+    $(".increment").click(function(){
+        var n=$(this).siblings(".itxt").val();
+        n++;
+        $(this).siblings(".itxt").val(n);
+    })
+    $(".decrement").click(function(){
+        var n=$(this).siblings(".itxt").val();
+        if(n==1){
+            return false;   //如果n==1,就停止执行后面的代码
+        }
+        n--;
+        $(this).siblings(".itxt").val(n);
+    })
 })
