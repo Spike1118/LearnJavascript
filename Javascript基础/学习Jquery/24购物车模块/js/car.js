@@ -26,6 +26,13 @@ $(function(){
         var n=$(this).siblings(".itxt").val();
         n++;
         $(this).siblings(".itxt").val(n);
+        //4.商品小计=商品单价*文本框的商品数量
+        // var p=$(this).parent().parent().siblings(".p-price").html();
+        //parents("指定的祖父元素") 可以选定指定的父级元素
+        var p=$(this).parents(".p-num").siblings(".p-price").html();
+        p=p.substr(1);  //把￥符号去掉再相乘 截取字符串 substr(1)
+        // console.log(p);
+        $(this).parents(".p-num").siblings(".p-sum").html("￥"+(p*n).toFixed(2));
     })
     $(".decrement").click(function(){
         var n=$(this).siblings(".itxt").val();
@@ -34,5 +41,21 @@ $(function(){
         }
         n--;
         $(this).siblings(".itxt").val(n);
+        // var p=$(this).parent().parent().siblings(".p-price").html();
+        var p=$(this).parents(".p-num").siblings(".p-price").html();
+        p=p.substr(1);  //把￥符号去掉再相乘 截取字符串 substr(1)
+        // console.log(p);
+        //toFixed("想要保留的小数位数") 可以保留值的小数位数
+        var price=(p*n).toFixed(2);
+        $(this).parents(".p-num").siblings(".p-sum").html("￥"+price);
+    })
+    //5.用户修改文本框的值，计算商品小计
+    $(".itxt").change(function(){
+        //获取修改的文本框的值
+        var n=$(this).val();
+        //当前商品的单价
+        var p=$(this).parents(".p-num").siblings(".p-price").html();
+         p=p.substr(1);
+        $(this).parents(".p-num").siblings(".p-sum").html("￥"+(p*n).toFixed(2));
     })
 })
