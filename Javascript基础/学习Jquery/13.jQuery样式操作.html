@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: #333;
+            color: aqua;
+            font-size: 18px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>你好，Javascript</div>
+    <script>
+        $(function () {
+            //一、通过css()方法操作样式  多用于样式少的操作 多了则不方便
+            //1.通过css()操作样式
+            var strBackground = $("div").css('background');
+            //只写样式名，则会返回样式
+            console.log(strBackground);
+            //2.css()方法 参数是属性名 属性值，逗号分隔， 是设置一组样式
+            //属性必须加引号，值如果是数字可以不加引号和单位
+            $("div").css("background", "red");
+            //3.css()   参数可以是对象形式，方便设置多组样式，属性名和属性值用冒号隔开，属性名可以不加引号
+            $("div").css({
+                color: "red",
+                "background": "blue",
+                "font-size": 20,
+            })
+
+            //二、设置类样式方法    
+            //设置类样式方法比较合适样式多的操作
+            //原生JS中className会覆盖原先的类名，jQuery的设置类样式方法只是对指定类操作，不影响原先的类名
+            //1.添加类
+            $("div").addClass("current");
+            //2.移除类
+            $("div").removeClass("current");
+            //3.切换类
+            $("div").toggleClass("big");
+        })
+    </script>
+</body>
+
+</html>

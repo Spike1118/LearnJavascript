@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ol>
+        <li>我是ol</li>
+        <li>我是ol</li>
+        <li class="item">我是ol的第三个</li>
+        <li>我是ol</li>
+        <li>我是ol</li>
+    </ol>
+    <ul>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+    </ul>
+    <div class="current"></div>
+    <div></div>
+    <script>
+        $(function () {
+            //1. 获取除了指定元素的其他所有同级兄弟元素 siblings("元素")  常用
+            //nextAll() 查找当前元素后面的元素
+            //prevAll() 查找当前元素前面的元素
+            $("ol>.item").siblings("li").css("color", "red");
+            //2.第n个元素
+            //(1)利用选择器选择
+            // var index=2
+            // $("ul>li:eq("+index+")").css("color", "blue");   //需拼接字符串
+            //(2)利用选择方法选择   eq()    推荐用 
+            $("ul li").eq(2).css("color", "blue");
+            //3. hasClass("class")    检查当前元素是否含有某个特定类名，如有，则返回true，否则false
+            console.log($("div:first").hasClass("current"));
+        })
+    </script>
+</body>
+
+</html>

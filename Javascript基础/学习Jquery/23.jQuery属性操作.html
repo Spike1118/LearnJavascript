@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="http://www.itcast.cn" title="都挺好">都挺好</a>
+    <input type="checkbox" name="" id="" checked>
+    <div index="1" data-index="2">我是div</div>
+    <span>123</span>
+    <script>
+        $(function () {
+            //1.element.prop("属性名")  获取元素固有的属性值
+            console.log($("a").prop("href"));
+            $("a").prop("title", "我们都挺好的") //可以设置元素固有属性的值
+            // $("div").prop("index", "33")
+
+            //2.element.attr("属性名")      元素的自定义属性
+            console.log($("div").attr("index"));
+            $("div").attr("index", "33");       //可以设置元素自定义属性的值
+            console.log($("div").attr("data-index"));   //可以获取H5自定义属性
+            //3. data() 这个里面的数据是存在元素的内存里面
+            //(1)附加数据语法：data("name","value")
+            $("span").data("uname", "andy");
+            console.log($("span").data("uname"));   //"andy"
+            //(2)获取数据语法：data("name")
+            //(3)data()获取data-index h5自定义属性 且不用写data- 且返回的是数字型
+            console.log($("div").data("index"));    // 返回数字2
+        })       
+    </script>
+</body>
+
+</html>

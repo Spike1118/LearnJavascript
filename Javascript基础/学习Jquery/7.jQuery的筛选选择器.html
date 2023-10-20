@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+    </ul>
+    <ol>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+        <li>我是第5个li</li>
+        <li>我是第6个li</li>
+    </ol>
+    <script>
+        $(function () {
+            //jQuery筛选选择器
+            $("ul li:first").css("color", "red");
+            $("ul li:last").css("color", "blue");
+            $("ol li:odd").css("color", "skyblue");
+            $("ul li:eq(2)").css("color", "yellow");
+            $("ol li:even").css("color", "purple");
+        })
+    </script>
+</body>
+
+</html>

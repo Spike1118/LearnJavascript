@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button>动起来</button>
+    <div></div>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                $("div").animate({      //animate(params,[speed],[easing],[fn]) params即想要修改的样式属性，不可省略，其他参数可以省略
+                    left: 600,
+                    top: 300,
+                    width: 500,
+                    opacity: .5
+                }, 500)
+            })
+        })
+    </script>
+</body>
+
+</html>
